@@ -18,10 +18,7 @@ fn main() {
 
         let guess: u64 = match guess.trim().parse() {
             Ok(n) => n,
-            Err(_) => {
-                println!("Invalid input. Aborting.");
-                return;
-            }
+            Err(_) => continue,
         };
         println!("Your guessed: {guess}");
         match guess.cmp(&secret) {
